@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermercado Ponto Novo</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="intro-loader">
+        <img src="imagens/logo.png" alt="Logo Ponto Novo" id="intro-logo">
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#" class="logo-nav">
+                    <img src="imagens/logo.png" alt="Ponto Novo">
+                </a>
+                
+                <div class="hamburger" id="hamburger-btn">☰</div>
+
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="folheto.pdf" target="_blank">Folhetos</a></li> 
+                    <li><a href="https://onlinesim.com.br/pontonovo/" class="btn-online" target="_blank">Compra Online</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="swiper swiper-hero">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="imagens/banner1.jpg" alt="Oferta Principal">
+                </div>
+                <div class="swiper-slide">
+                    <img src="imagens/banner2.jpg" alt="Oferta Clube">
+                </div>
+                <div class="swiper-slide">
+                    <img src="imagens/banner3.jpg" alt="Oferta Açougue">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="promo-section container">
+        <div class="promo-grid">
+            <div class="promo-img">
+                <img src="imagens/promocao.jpg" alt="Promoção da Semana">
+            </div>
+            <div class="promo-info">
+                <h2>Dinâmica da Promoção</h2>
+                <p>
+                    Já imaginou <strong>R$ 50 MIL</strong> no bolso? A cada <strong>R$ 150,00</strong> em compras, ganhe um cupom e deposite na urna.
+                    <br><br>
+                    ✅ <strong>Pagamento via PIX:</strong> ganha cupons em dobro.<br>
+                    ✅ <strong>Sorteio:</strong> Dia 01 de Fevereiro.<br>
+                </p>
+                <a href="#" class="btn-text">Ver regulamento completo &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section">
+        <div class="container">
+            <h3>Nossas Marcas Parceiras</h3>
+            <div class="swiper swiper-brands">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="imagens/marca1.png" alt="Marca 1"></div>
+                    <div class="swiper-slide"><img src="imagens/marca2.png" alt="Marca 2"></div>
+                    <div class="swiper-slide"><img src="imagens/marca3.png" alt="Marca 3"></div>
+                    <div class="swiper-slide"><img src="imagens/marca4.png" alt="Marca 4"></div>
+                    
+                    <div class="swiper-slide"><img src="imagens/marca1.png" alt="Marca 1"></div>
+                    <div class="swiper-slide"><img src="imagens/marca2.png" alt="Marca 2"></div>
+                    <div class="swiper-slide"><img src="imagens/marca3.png" alt="Marca 3"></div>
+                    <div class="swiper-slide"><img src="imagens/marca4.png" alt="Marca 4"></div>
+
+                    <div class="swiper-slide"><img src="imagens/marca1.png" alt="Marca 1"></div>
+                    <div class="swiper-slide"><img src="imagens/marca2.png" alt="Marca 2"></div>
+                    <div class="swiper-slide"><img src="imagens/marca3.png" alt="Marca 3"></div>
+                    <div class="swiper-slide"><img src="imagens/marca4.png" alt="Marca 4"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 class="footer-title">Nossas Lojas</h3>
+            <div class="footer-grid">
+                <div class="store-card">
+                    <h4>Loja 01 - Mogi Guaçu</h4>
+                    <p>R. Olímpio de Oliveira, 199<br>JD Almira</p>
+                </div>
+                <div class="store-card">
+                    <h4>Loja 02 - Mogi Guaçu</h4>
+                    <p>R. José Ferreira de Campos, 20<br>Jd Novo 1</p>
+                </div>
+                <div class="store-card">
+                    <h4>Loja 03 - Mogi Mirim</h4>
+                    <p>Av. Prof. Adib Chaib, 2750<br>Centro</p>
+                </div>
+                <div class="store-card">
+                    <h4>Loja 04 - Pinhal</h4>
+                    <p>Av. Washington Luís, 425<br>Jd das Rosas</p>
+                </div>
+                <div class="store-card">
+                    <h4>Loja 05 - Mogi Guaçu</h4>
+                    <p>R. Prof. Armando dos Santos, 1290<br>Jd Bandeirantes</p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Supermercado Ponto Novo. Desenvolvido com carinho.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
