@@ -6,8 +6,9 @@
     <title>Ponto Novo | Premium</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/scrollreveal"></script> <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet"> <script src="https://unpkg.com/scrollreveal"></script>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -28,7 +29,7 @@
 
                 <ul class="nav-links" id="nav-links">
                     <li><a href="#">Home</a></li>
-                    <li><a href="folheto.pdf" target="_blank">Ofertas da Semana</a></li> 
+                    <li><a href="folheto.pdf" target="_blank">Ofertas</a></li> 
                     <li><a href="https://onlinesim.com.br/pontonovo/" class="btn-online" target="_blank">Loja Online</a></li>
                 </ul>
             </div>
@@ -49,39 +50,24 @@
 
     <section class="promo-section">
         <div class="container">
-            <div class="promo-card reveal">
+            <div class="promo-layout reveal">
                 <div class="promo-visual">
-                    <div class="image-wrapper">
-                        <img src="imagens/promocao.jpg" alt="Sorteio R$ 50 Mil">
-                    </div>
-                    <div class="promo-badge">SORTEIO</div>
+                    <img src="imagens/promocao.jpg" alt="Sorteio R$ 50 Mil">
                 </div>
                 
                 <div class="promo-content">
-                    <span class="tagline">Campanha Exclusiva</span>
-                    <h2>Concorra a <br><span class="highlight">R$ 50.000,00</span></h2>
-                    <p class="description">
-                        A chance de mudar de vida fazendo suas compras. A cada <strong>R$ 150,00</strong>, você garante um cupom.
+                    <span class="overline">Campanha Exclusiva</span>
+                    <h2>Concorra a <br><span class="text-gradient">R$ 50.000,00</span></h2>
+                    <p class="lead">
+                        A cada <strong>R$ 150,00</strong> em compras, você garante um cupom.
                     </p>
                     
-                    <div class="benefits-grid">
-                        <div class="benefit-item">
-                            <span class="icon">🚀</span>
-                            <div>
-                                <strong>PIX Acelera</strong>
-                                <p>Pague com PIX e ganhe cupons em dobro.</p>
-                            </div>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="icon">📅</span>
-                            <div>
-                                <strong>Grande Dia</strong>
-                                <p>Sorteio oficial em 01 de Fevereiro.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <ul class="benefits-list">
+                        <li><span>⚡</span> Pague com PIX e ganhe cupons em dobro.</li>
+                        <li><span>📅</span> Sorteio oficial em 01 de Fevereiro.</li>
+                    </ul>
 
-                    <a href="#" class="btn-text">Ler regulamento completo</a>
+                    <a href="#" class="btn-link">Ler regulamento completo &rarr;</a>
                 </div>
             </div>
         </div>
@@ -90,26 +76,23 @@
     <section class="brands-section reveal">
         <div class="container">
             <div class="section-header">
-                <h3>Marcas que confiamos</h3>
-                <div class="line"></div>
+                <h3>Marcas Próprias</h3>
             </div>
             
-            <div class="brands-container-glass">
-                <div class="swiper swiper-brands">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="imagens/marca1.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca2.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca3.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca4.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca1.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca2.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca3.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca4.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca1.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca2.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca3.png"></div>
-                        <div class="swiper-slide"><img src="imagens/marca4.png"></div>
-                    </div>
+            <div class="swiper swiper-brands">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="imagens/marca1.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca2.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca3.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca4.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca1.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca2.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca3.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca4.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca1.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca2.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca3.png"></div>
+                    <div class="swiper-slide"><img src="imagens/marca4.png"></div>
                 </div>
             </div>
         </div>
@@ -118,35 +101,41 @@
     <footer class="reveal">
         <div class="container">
             <h3 class="footer-title">Nossas Unidades</h3>
-            <div class="footer-grid">
-                <div class="store-card">
+            
+            <div class="locations-list">
+                <div class="location-item">
                     <h4>Loja 01</h4>
-                    <span>Jd. Almira</span>
-                    <p>R. Olímpio de Oliveira, 199</p>
+                    <span class="city">Mogi Guaçu</span>
+                    <p>R. Olímpio de Oliveira, 199 <br> Jd. Almira</p>
                 </div>
-                <div class="store-card">
+
+                <div class="location-item">
                     <h4>Loja 02</h4>
-                    <span>Jd. Novo 1</span>
-                    <p>R. José Ferreira de Campos, 20</p>
+                    <span class="city">Mogi Guaçu</span>
+                    <p>R. José Ferreira de Campos, 20 <br> Jd. Novo 1</p>
                 </div>
-                <div class="store-card">
+
+                <div class="location-item">
                     <h4>Loja 03</h4>
-                    <span>Mogi Mirim</span>
-                    <p>Av. Prof. Adib Chaib, 2750</p>
+                    <span class="city">Mogi Mirim</span>
+                    <p>Av. Prof. Adib Chaib, 2750 <br> Centro</p>
                 </div>
-                <div class="store-card">
+
+                <div class="location-item">
                     <h4>Loja 04</h4>
-                    <span>Pinhal</span>
-                    <p>Av. Washington Luís, 425</p>
+                    <span class="city">Pinhal</span>
+                    <p>Av. Washington Luís, 425 <br> Jd. das Rosas</p>
                 </div>
-                <div class="store-card">
+
+                <div class="location-item">
                     <h4>Loja 05</h4>
-                    <span>Bandeirantes</span>
-                    <p>R. Prof. Armando dos Santos, 1290</p>
+                    <span class="city">Mogi Guaçu</span>
+                    <p>R. Prof. Armando dos Santos, 1290 <br> Jd. Bandeirantes</p>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2026 Supermercado Ponto Novo. Excelência perto de você.</p>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Supermercado Ponto Novo.</p>
             </div>
         </div>
     </footer>
@@ -180,8 +169,8 @@
 
     <div id="cookie-banner" class="cookie-banner">
         <div class="cookie-content">
-            <p>Usamos cookies para ofertas exclusivas. Ao continuar, você concorda com nossa <a href="#">Política</a>.</p>
-            <button id="accept-cookies" class="btn-cookie">Aceitar</button>
+            <p>Usamos cookies para ofertas exclusivas. Ao continuar, você concorda.</p>
+            <button id="accept-cookies" class="btn-cookie">OK, Entendi</button>
         </div>
     </div>
 
