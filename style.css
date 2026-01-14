@@ -11,15 +11,15 @@
 
 body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
 
-/* --- LOADER (FUNDO BRANCO) --- */
+/* --- LOADER (Fundo Branco) --- */
 #intro-loader {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background-color: #ffffff; /* Branco Puro */
+    background-color: #ffffff;
     z-index: 9999; display: flex; justify-content: center; align-items: center;
 }
 #intro-logo { max-width: 250px; opacity: 0; }
 
-/* Header */
+/* --- HEADER --- */
 header {
     background-color: var(--white);
     box-shadow: 0 2px 15px rgba(0,0,0,0.05);
@@ -41,19 +41,21 @@ header {
 }
 .btn-online:hover { transform: scale(1.05); }
 
-/* Hero */
+/* --- HERO (CARROSSEL) --- */
 .hero-section { margin-top: 80px; width: 100%; }
 .swiper-hero { width: 100%; height: auto; }
 .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
 @media (min-width: 1024px) { .swiper-hero { height: 500px; } }
 
-/* Promoção */
+/* --- PROMOÇÃO --- */
 .promo-section { padding: 80px 0; }
 .promo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+
 .promo-img img {
     width: 100%; border-radius: 20px;
     box-shadow: var(--shadow); border: 4px solid white;
 }
+
 .promo-info {
     background: white; padding: 40px; border-radius: 20px;
     box-shadow: var(--shadow); border-left: 6px solid var(--primary-blue);
@@ -66,19 +68,41 @@ header {
 }
 .btn-text:hover { border-bottom-color: var(--secondary-red); }
 
-/* Marcas */
+/* --- MARCAS (CORREÇÃO DE CORTE) --- */
 .brands-section { padding: 50px 0; background: white; text-align: center; }
 .brands-section h3 { margin-bottom: 40px; color: #888; letter-spacing: 2px; text-transform: uppercase; font-size: 0.9rem; }
+
 .swiper-brands .swiper-slide {
     filter: grayscale(100%); opacity: 0.6; transition: 0.3s;
+    display: flex; justify-content: center; align-items: center;
+    height: 110px; /* Altura fixa para o container */
+    padding: 5px;
 }
-.swiper-brands .swiper-slide:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.1); }
+.swiper-brands img {
+    max-width: 100%; 
+    max-height: 100%; 
+    object-fit: contain; /* GARANTE QUE O LOGO CAIBA INTEIRO */
+}
 
-/* Footer */
+.swiper-brands .swiper-slide:hover { 
+    filter: grayscale(0%); 
+    opacity: 1; 
+    transform: none; /* Sem zoom para não cortar */
+}
+
+/* --- FOOTER --- */
 footer { background: #0b1c31; color: white; padding: 70px 0 30px; }
 .footer-title { text-align: center; margin-bottom: 50px; color: var(--primary-blue); }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 .store-card {
+    flex: 1 1 280px;
+    max-width: 350px;
     background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px;
     border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
 }
@@ -88,16 +112,118 @@ footer { background: #0b1c31; color: white; padding: 70px 0 30px; }
 .store-card:hover p { color: white; }
 .copyright { text-align: center; margin-top: 50px; font-size: 0.8rem; color: #555; }
 
-/* Mobile */
-.hamburger { display: none; font-size: 1.8rem; cursor: pointer; }
-@media (max-width: 768px) {
+/* --- WHATSAPP FLUTUANTE --- */
+.whatsapp-container {
+    position: fixed; bottom: 25px; left: 25px; z-index: 99999;
+}
+.whatsapp-btn {
+    width: 60px; height: 60px;
+    background-color: #25D366;
+    border-radius: 50%; border: none;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s;
+    animation: pulse 2s infinite;
+}
+.whatsapp-btn img {
+    width: 35px; height: 35px; display: block; pointer-events: none;
+}
+.whatsapp-btn:hover { transform: scale(1.1); }
+
+.whatsapp-popup {
+    position: absolute; bottom: 75px; left: 0;
+    width: 300px; background: white; border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2); overflow: hidden;
+    opacity: 0; visibility: hidden;
+    transform: translateY(20px); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: bottom left;
+}
+.whatsapp-popup.active { opacity: 1; visibility: visible; transform: translateY(0); }
+.popup-header {
+    background-color: #075e54; color: white; padding: 15px;
+    font-size: 0.95rem; font-weight: 600;
+    display: flex; justify-content: space-between; align-items: center;
+}
+#close-popup { background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; }
+.sac-item {
+    display: flex; align-items: center; padding: 12px 15px;
+    text-decoration: none; color: #333; border-bottom: 1px solid #f0f0f0;
+    transition: background 0.2s;
+}
+.sac-item:hover { background-color: #f9f9f9; }
+.sac-icon { font-size: 1.2rem; margin-right: 12px; }
+.sac-info { display: flex; flex-direction: column; }
+.sac-info strong { font-size: 0.85rem; color: #075e54; }
+.sac-info span { font-size: 0.8rem; color: #666; }
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+/* --- AVISO DE COOKIES --- */
+.cookie-banner {
+    position: fixed; bottom: -100%; left: 0; width: 100%;
+    background-color: #fff; box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+    z-index: 999999; padding: 20px; transition: bottom 0.5s ease-out;
+}
+.cookie-banner.show { bottom: 0; }
+.cookie-content {
+    max-width: 1200px; margin: 0 auto; display: flex;
+    justify-content: space-between; align-items: center; gap: 20px;
+}
+.cookie-content p { font-size: 0.9rem; color: #555; margin: 0; }
+.cookie-content a { color: var(--primary-blue); font-weight: 600; text-decoration: underline; }
+.btn-cookie {
+    background-color: var(--primary-blue); color: white; border: none;
+    padding: 10px 25px; border-radius: 50px; font-weight: 600; cursor: pointer;
+    white-space: nowrap; transition: background 0.3s;
+}
+.btn-cookie:hover { background-color: #064bb5; }
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: var(--primary-blue); }
+
+@media (max-width: 1024px) {
+    /* Menu Hamburguer */
     .nav-links {
-        position: fixed; right: -100%; top: 80px; height: calc(100vh - 80px);
-        background: white; flex-direction: column; width: 100%; justify-content: center;
+        position: fixed; right: -100%; top: 80px; 
+        height: calc(100vh - 80px); background: white; 
+        flex-direction: column; width: 100%; justify-content: flex-start;
+        padding-top: 50px; box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .nav-links.active { right: 0; }
     .hamburger { display: block; }
-    .promo-grid { grid-template-columns: 1fr; }
-    .promo-info h2 { font-size: 1.8rem; }
+    .nav-links li { margin: 20px 0; }
+    
+    /* Promoção em Card Vertical */
+    .promo-grid { 
+        grid-template-columns: 1fr; gap: 0; 
+        background: white; border-radius: 20px; overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+    .promo-img img {
+        width: 100%; height: auto; border-radius: 20px 20px 0 0; border: none;
+    }
+    .promo-info {
+        padding: 30px 20px; text-align: center;
+        border-radius: 0 0 20px 20px; border-left: none;
+        border-top: 5px solid var(--primary-blue); box-shadow: none;
+    }
+    .promo-info h2 { font-size: 1.8rem; margin-bottom: 15px; }
+    .btn-text {
+        margin-top: 25px; display: inline-block; padding: 10px 25px;
+        background-color: #f5f5f5; border-radius: 50px;
+    }
+
+    /* Ajustes Gerais */
+    .swiper-hero { height: 250px; }
+    .logo-nav img { height: 40px; }
+    .container { padding: 0 15px; }
+    
+    /* Cookie Mobile */
+    .cookie-content { flex-direction: column; text-align: center; }
+    .cookie-banner { padding-bottom: 90px; }
 }
