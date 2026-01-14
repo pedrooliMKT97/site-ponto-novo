@@ -1,7 +1,6 @@
-// --- TRAVA DE SEGURANÇA E ANIMAÇÃO INICIAL ---
 setTimeout(() => {
     const loader = document.getElementById('intro-loader');
-    if (loader && loader.style.display !== 'none') {
+    if (loader) {
         loader.style.opacity = '0';
         setTimeout(() => { loader.style.display = 'none'; }, 500);
     }
@@ -16,25 +15,19 @@ window.addEventListener("load", () => {
           .to("#intro-loader", { duration: 0.5, opacity: 0, display: "none", ease: "power1.out" }, "-=0.4");
     }
 
-    // ScrollReveal (Animação ao descer a página)
+    // ScrollReveal
     if (typeof ScrollReveal !== 'undefined') {
         const sr = ScrollReveal({
-            origin: 'bottom',
-            distance: '30px',
-            duration: 1000,
-            delay: 200,
-            reset: false 
+            origin: 'bottom', distance: '30px', duration: 1000, delay: 200, reset: false 
         });
-
         sr.reveal('.hero-section', { delay: 400 });
-        sr.reveal('.promo-card', { interval: 200 });
+        sr.reveal('.promo-layout', { delay: 200 });
         sr.reveal('.section-header', { delay: 100 });
-        sr.reveal('.brands-container-glass', { delay: 200 });
-        sr.reveal('.footer-grid', { delay: 100 });
+        sr.reveal('.brands-section', { delay: 200 });
+        sr.reveal('.locations-list', { delay: 100 });
     }
 });
 
-// --- SWIPERS ---
 if (typeof Swiper !== 'undefined') {
     new Swiper('.swiper-hero', {
         loop: true, speed: 1000, effect: 'fade',
@@ -45,7 +38,7 @@ if (typeof Swiper !== 'undefined') {
     new Swiper('.swiper-brands', {
         loop: true, speed: 3000,
         autoplay: { delay: 0, disableOnInteraction: false },
-        allowTouchMove: false, slidesPerView: 2, spaceBetween: 20,
+        allowTouchMove: false, slidesPerView: 2, spaceBetween: 30,
         breakpoints: {
             640: { slidesPerView: 3 },
             768: { slidesPerView: 4 },
@@ -54,13 +47,11 @@ if (typeof Swiper !== 'undefined') {
     });
 }
 
-// --- MENU MOBILE ---
 const hamburger = document.getElementById('hamburger-btn');
 const navLinks = document.getElementById('nav-links');
 if(hamburger && navLinks){
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        // Animação do ícone hamburguer
         const spans = hamburger.querySelectorAll('span');
         if(navLinks.classList.contains('active')){
             spans[0].style.transform = "rotate(45deg) translate(5px, 5px)";
@@ -74,9 +65,7 @@ if(hamburger && navLinks){
     });
 }
 
-// --- WHATSAPP & COOKIES ---
 document.addEventListener('DOMContentLoaded', () => {
-    // WhatsApp
     const whatsappBtn = document.getElementById('whatsapp-toggle');
     const whatsappPopup = document.getElementById('whatsapp-popup');
     const closePopup = document.getElementById('close-popup');
@@ -97,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Cookies
     const cookieBanner = document.getElementById('cookie-banner');
     const acceptBtn = document.getElementById('accept-cookies');
     if(cookieBanner && !localStorage.getItem('cookiesAccepted')) {
